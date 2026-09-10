@@ -6,7 +6,7 @@ Required env var for live LLM calls:
     GROQ_API_KEY
 
 Optional:
-    GROQ_MODEL        (default: llama-3.3-70b-versatile)
+    GROQ_MODEL        (default: openai/gpt-oss-120b)
     UNIPATH_TOP_K      (default: 4)  -> number of RAG chunks retrieved per query
 """
 
@@ -33,7 +33,7 @@ def _get_setting(key: str, default: str = "") -> str:
 
 # --- LLM / Groq settings ---
 GROQ_API_KEY = _get_setting("GROQ_API_KEY", "")
-GROQ_MODEL = _get_setting("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = _get_setting("GROQ_MODEL", "openai/gpt-oss-120b")
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 # If no API key is set, the module runs in MOCK MODE:
