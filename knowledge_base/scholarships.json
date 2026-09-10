@@ -1,0 +1,80 @@
+[
+  {
+    "id": "sch_001",
+    "name": "FAST Merit Scholarship",
+    "country": "Pakistan",
+    "applies_to_university_id": "uni_001",
+    "eligibility": "CGPA 3.5+ or top 10% of entry test, financial need considered",
+    "coverage": "25%-100% tuition waiver",
+    "amount": "Up to full tuition",
+    "deadline": "2026-07-20",
+    "required_documents": ["Income certificate", "Entry test result", "Transcript"],
+    "source": "https://nu.edu.pk/Financial-Assistance",
+    "last_updated": "2026-01-10"
+  },
+  {
+    "id": "sch_002",
+    "name": "LUMS National Outreach Programme (NOP)",
+    "country": "Pakistan",
+    "applies_to_university_id": "uni_002",
+    "eligibility": "Household income below threshold, strong academic record",
+    "coverage": "Up to 100% tuition + living stipend",
+    "amount": "Full funding possible",
+    "deadline": "2026-04-10",
+    "required_documents": ["Income proof", "Utility bills", "Academic transcript"],
+    "source": "https://nop.lums.edu.pk",
+    "last_updated": "2026-01-10"
+  },
+  {
+    "id": "sch_003",
+    "name": "Malaysia International Scholarship (MIS)",
+    "country": "Malaysia",
+    "applies_to_university_id": "any",
+    "eligibility": "CGPA 3.0+/equivalent, age under 25 for undergrad",
+    "coverage": "Tuition + monthly allowance + return airfare",
+    "amount": "Full funding",
+    "deadline": "2026-05-15",
+    "required_documents": ["Transcript", "IELTS/TOEFL", "Passport", "Recommendation letters"],
+    "source": "https://biasiswa.mohe.gov.my",
+    "last_updated": "2026-01-08"
+  },
+  {
+    "id": "sch_004",
+    "name": "UTM International Excellence Scholarship",
+    "country": "Malaysia",
+    "applies_to_university_id": "uni_003",
+    "eligibility": "CGPA 3.3+, IELTS 6.0+",
+    "coverage": "20%-50% tuition waiver",
+    "amount": "Partial funding",
+    "deadline": "2026-06-01",
+    "required_documents": ["Transcript", "IELTS", "Personal statement"],
+    "source": "https://www.utm.my/scholarships",
+    "last_updated": "2026-01-08"
+  },
+  {
+    "id": "sch_005",
+    "name": "Sharjah Higher Education Scholarship",
+    "country": "UAE",
+    "applies_to_university_id": "uni_006",
+    "eligibility": "High school average 85%+, financial need considered",
+    "coverage": "25%-75% tuition waiver",
+    "amount": "Partial funding",
+    "deadline": "2026-06-15",
+    "required_documents": ["Transcript", "Income proof", "IELTS"],
+    "source": "https://www.sharjah.ac.ae/en/Admission/Scholarships",
+    "last_updated": "2026-01-05"
+  },
+  {
+    "id": "sch_006",
+    "name": "AUS Presidential Merit Scholarship",
+    "country": "UAE",
+    "applies_to_university_id": "uni_010",
+    "eligibility": "CGPA 3.7+, SAT 1350+ or equivalent",
+    "coverage": "Up to 100% tuition",
+    "amount": "Full to partial funding",
+    "deadline": "2026-02-15",
+    "required_documents": ["Transcript", "SAT/IELTS", "Essay", "Recommendation letter"],
+    "source": "https://www.aus.edu/scholarships",
+    "last_updated": "2026-01-05"
+  }
+]

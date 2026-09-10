@@ -1,0 +1,35 @@
+[
+  {
+    "id": "work_001",
+    "country": "Pakistan",
+    "allowed_for_students": true,
+    "max_hours_per_week": null,
+    "official_rule_note": "No federal restriction on students working part-time; on-campus jobs limited and competitive.",
+    "common_job_categories": ["Teaching assistant", "Tutoring", "Freelance/IT internships", "Campus ambassador roles"],
+    "approx_earning_usd_per_month": "50-200 (varies widely, freelance can exceed this)",
+    "source": "General labor guidance; verify with individual university career office",
+    "last_updated": "2026-01-10"
+  },
+  {
+    "id": "work_002",
+    "country": "Malaysia",
+    "allowed_for_students": true,
+    "max_hours_per_week": 20,
+    "official_rule_note": "International students on a valid student pass may work up to 20 hours/week during semester breaks only, subject to Immigration Department approval; rules can vary by institution.",
+    "common_job_categories": ["Retail", "F&B service", "Campus roles", "Tech internships (with approval)"],
+    "approx_earning_usd_per_month": "150-350",
+    "source": "https://www.educationmalaysia.gov.my (verify current rules before relying on this)",
+    "last_updated": "2026-01-08"
+  },
+  {
+    "id": "work_003",
+    "country": "UAE",
+    "allowed_for_students": false,
+    "max_hours_per_week": 0,
+    "official_rule_note": "Standard student visas generally do not permit part-time employment; some universities offer paid on-campus internship programs only.",
+    "common_job_categories": ["On-campus internship (university-run programs only)"],
+    "approx_earning_usd_per_month": "Not typically applicable",
+    "source": "General guidance; verify current UAE immigration rules before relying on this",
+    "last_updated": "2026-01-05"
+  }
+]

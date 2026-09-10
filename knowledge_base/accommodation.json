@@ -1,0 +1,67 @@
+[
+  {
+    "id": "acc_001",
+    "country": "Pakistan",
+    "city": "Islamabad",
+    "applies_to_university_id": "uni_001",
+    "hostel_available": true,
+    "hostel_cost_usd_per_month": 90,
+    "shared_room_cost_usd_per_month": 60,
+    "private_room_cost_usd_per_month": 130,
+    "notes": "On-campus hostel with mess facility; off-campus shared rooms common near G-9/G-10.",
+    "source": "https://nu.edu.pk/Hostel",
+    "last_updated": "2026-01-10"
+  },
+  {
+    "id": "acc_002",
+    "country": "Pakistan",
+    "city": "Lahore",
+    "applies_to_university_id": "uni_002",
+    "hostel_available": true,
+    "hostel_cost_usd_per_month": 110,
+    "shared_room_cost_usd_per_month": 80,
+    "private_room_cost_usd_per_month": 160,
+    "notes": "Limited on-campus seats; priority given to out-of-city students.",
+    "source": "https://lums.edu.pk/hostel-life",
+    "last_updated": "2026-01-10"
+  },
+  {
+    "id": "acc_003",
+    "country": "Malaysia",
+    "city": "Johor Bahru",
+    "applies_to_university_id": "uni_003",
+    "hostel_available": true,
+    "hostel_cost_usd_per_month": 150,
+    "shared_room_cost_usd_per_month": 120,
+    "private_room_cost_usd_per_month": 250,
+    "notes": "On-campus residential colleges; off-campus condos popular among international students.",
+    "source": "https://www.utm.my/accommodation",
+    "last_updated": "2026-01-08"
+  },
+  {
+    "id": "acc_004",
+    "country": "Malaysia",
+    "city": "Cyberjaya",
+    "applies_to_university_id": "uni_004",
+    "hostel_available": true,
+    "hostel_cost_usd_per_month": 140,
+    "shared_room_cost_usd_per_month": 110,
+    "private_room_cost_usd_per_month": 230,
+    "notes": "Purpose-built student residences near campus.",
+    "source": "https://www.mmu.edu.my/accommodation",
+    "last_updated": "2026-01-08"
+  },
+  {
+    "id": "acc_005",
+    "country": "UAE",
+    "city": "Sharjah",
+    "applies_to_university_id": "uni_006",
+    "hostel_available": true,
+    "hostel_cost_usd_per_month": 350,
+    "shared_room_cost_usd_per_month": 300,
+    "private_room_cost_usd_per_month": 550,
+    "notes": "On-campus dorms with meal plans; higher cost of living than Pakistan/Malaysia.",
+    "source": "https://www.sharjah.ac.ae/en/StudentLife/Housing",
+    "last_updated": "2026-01-05"
+  }
+]
