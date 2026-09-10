@@ -29,7 +29,7 @@ unipath_ai/
 ├── requirements.txt
 ├── .env.example
 ├── test_module.py            <- run this first to verify everything works
-├── app_example.py            <- minimal working Streamlit demo
+├── app_streamlit.py            <- minimal working Streamlit demo
 ├── knowledge_base/
 │   ├── universities.json
 │   ├── scholarships.json
