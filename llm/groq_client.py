@@ -69,7 +69,14 @@ class GroqClient:
             payload["response_format"] = {"type": "json_object"}
 
         resp = requests.post(GROQ_API_URL, headers=headers, json=payload, timeout=30)
-        resp.raise_for_status()
+        if not resp.ok:
+            # Surface Groq's actual error body (e.g. "model decommissioned",
+            # "invalid api key") instead of a bare, unhelpful HTTPError.
+            try:
+                detail = resp.json().get("error", {}).get("message", resp.text)
+            except Exception:
+                detail = resp.text
+            raise RuntimeError(f"Groq API error ({resp.status_code}) for model '{self.model}': {detail}")
         data = resp.json()
         return data["choices"][0]["message"]["content"]
 
