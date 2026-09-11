@@ -16,6 +16,8 @@ Get a free key at https://console.groq.com/keys
 """
 
 import json
+import re
+import time
 from typing import List, Dict, Optional
 
 import requests
@@ -28,6 +30,9 @@ from config import (
     LLM_TEMPERATURE,
     MOCK_MODE,
 )
+
+MAX_RETRIES = 2  # on a 429, retry this many times before giving up
+DEFAULT_RETRY_WAIT_SECONDS = 5.0
 
 
 class GroqClient:
@@ -48,6 +53,10 @@ class GroqClient:
 
         If json_mode=True, asks the model to return raw JSON only
         (caller is still responsible for parsing/validating it).
+
+        On a 429 (rate limit), automatically waits and retries up to
+        MAX_RETRIES times - Groq's error message tells us exactly how
+        long to wait, so we use that instead of guessing.
         """
         if self.mock_mode:
             return self._mock_response(system_prompt, user_prompt, json_mode)
@@ -68,17 +77,44 @@ class GroqClient:
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
 
-        resp = requests.post(GROQ_API_URL, headers=headers, json=payload, timeout=30)
-        if not resp.ok:
-            # Surface Groq's actual error body (e.g. "model decommissioned",
-            # "invalid api key") instead of a bare, unhelpful HTTPError.
+        last_error = None
+        for attempt in range(MAX_RETRIES + 1):
+            resp = requests.post(GROQ_API_URL, headers=headers, json=payload, timeout=30)
+
+            if resp.ok:
+                data = resp.json()
+                return data["choices"][0]["message"]["content"]
+
             try:
                 detail = resp.json().get("error", {}).get("message", resp.text)
             except Exception:
                 detail = resp.text
-            raise RuntimeError(f"Groq API error ({resp.status_code}) for model '{self.model}': {detail}")
-        data = resp.json()
-        return data["choices"][0]["message"]["content"]
+            last_error = RuntimeError(
+                f"Groq API error ({resp.status_code}) for model '{self.model}': {detail}"
+            )
+
+            if resp.status_code == 429 and attempt < MAX_RETRIES:
+                wait_seconds = self._parse_retry_wait(detail)
+                time.sleep(wait_seconds)
+                continue
+
+            # Non-429 error, or retries exhausted: give up now.
+            raise last_error
+
+        raise last_error  # pragma: no cover - loop always returns or raises above
+
+    @staticmethod
+    def _parse_retry_wait(detail: str) -> float:
+        """Extract the 'try again in 14.4s' style hint Groq includes in
+        its 429 message body. Falls back to a fixed default if not found.
+        """
+        match = re.search(r"try again in ([\d.]+)s", detail)
+        if match:
+            try:
+                return float(match.group(1)) + 0.5  # small buffer
+            except ValueError:
+                pass
+        return DEFAULT_RETRY_WAIT_SECONDS
 
     # ---------- mock mode ----------
 
