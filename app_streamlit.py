@@ -55,7 +55,13 @@ if submitted:
     }
     with st.spinner("Running the agent pipeline (university, eligibility, "
                      "scholarship, accommodation, work, budget)..."):
+        
+        try:
         result = ai.generate_roadmap(profile)
+        except Exception as e:
+            st.error(f"AI generation failed: {e}")
+            st.stop()
+            
 
     st.subheader("📍 Your Personalized Roadmap")
     st.write(result["final_roadmap"])
