@@ -46,8 +46,8 @@ MOCK_MODE = GROQ_API_KEY == ""
 # --- RAG settings ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 KB_DIR = os.path.join(BASE_DIR, "knowledge_base")
-TOP_K = int(_get_setting("UNIPATH_TOP_K", "4"))
+TOP_K = int(_get_setting("UNIPATH_TOP_K", "3"))
 
 # --- Generation settings ---
 LLM_TEMPERATURE = 0.3
-LLM_MAX_TOKENS = 900
+LLM_MAX_TOKENS = 450  # kept modest to fit Groq's free-tier tokens-per-minute limit across 7 chained calls
