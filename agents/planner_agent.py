@@ -64,7 +64,7 @@ class PlannerAgent(BaseAgent):
             f"{agent_outputs_text}\n\n"
             "Synthesize the above into the final personalized roadmap as instructed."
         )
-        final_roadmap_text = self.llm.chat(self.system_prompt, user_prompt, max_tokens=1200)
+        final_roadmap_text = self.llm.chat(self.system_prompt, user_prompt, max_tokens=700)
 
         return {
             "profile": profile,
